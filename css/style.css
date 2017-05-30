@@ -640,12 +640,10 @@ span {
 
 .parallax {
     /* The image used */
-    background-image: url('../image/5427-erp.jpg');
+    background-image: url('../image/funkcii_erp.jpg');
     /* Set a specific height */
     min-height: 500px;
-    max-height: 1000px;
-    width: 70%;
-
+    
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
