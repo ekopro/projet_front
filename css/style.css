@@ -643,6 +643,8 @@ span {
     background-image: url('../image/5427-erp.jpg');
     /* Set a specific height */
     min-height: 500px;
+    max-height: 1000px;
+    width: 70%;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
