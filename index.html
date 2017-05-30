@@ -10,7 +10,7 @@
   <body>
     <div class="header">
       <div class="header__logo">
-        <img src="http://x-lines.ru/letters/i/cyrillictechno/0020/4eb71f/32/1/efnirwbykphig7dfpw.png">
+        <img src="image/efnirwbykphig7dfpw.png">
       </div>
       <nav id="header__menu">
         <ul class="header__navigation-menu">
@@ -21,9 +21,9 @@
       </nav>
     </div>
 
-      <div class="main__capability">
+      <div class="main__capability parallax">
           <h2 class="main__name">
-            <img src="http://x-lines.ru/letters/i/cyrillictechno/0020/4eb71f/60/1/efnirwbykphig7dfpw.png">
+            <img src="image/big-logo.png">
           </h2>
           <p class="main__description">Все, что нужно, в одной системе: продажи,
             закупки, склад, финансы, клиенты и поставщики</p>
@@ -116,7 +116,7 @@
             <p>Единая транзакционная система для подавляющего большинства операций</p>
             <p>Возможность внедрения лучших практик посредством реинжиниринга бизнес-процессов</p>
 
-            <button>Заказать</button>
+            <button class="price">Заказать</button>
           </div>
 
           <div class="main__pricing-form">
@@ -126,7 +126,7 @@
             <p>Сведе́ние всех операций в единую базу для последующей обработки и получения в реальном времени сбалансированных планов</p>
             <p>Интегрирация систем, разработанных для отдельной организации</p>
 
-            <button>Заказать</button>
+            <button class="price">Заказать</button>
           </div>
 
           <div class="main__pricing-form ">
@@ -136,29 +136,37 @@
             <p>Сведе́ние всех операций в единую базу для последующей обработки и получения в реальном времени сбалансированных планов</p>
             <p>Интегрирация систем, разработанных для отдельной организации</p>
 
-            <button>Заказать</button>
+            <button class="price">Заказать</button>
           </div>
       </div>
     </div>
 
 
-      <div class="main__support">
+      <div class="main__support parallax2">
         <div class="main__support-title">
           <a id="support"></a>
           <h2>Контакты</h2>
         </div>
         <div class="main__context">
-          <div>
-            <h4>Форма обратной связи</h4>
-            <form class="main__support-form">
-              <input class="main__name-input" type="text" placeholder="Ваше Имя">
-              <input  class="main__email-input"type="email" placeholder="Ваш почтовый адрес" required>
-              <textarea  class = "main__text-input" placeholder="Текст сообщения" required></textarea>
-              <button class="main__button-send" rel= "reg_form" >Отправить</button>
-            </form>
-          </div>
-          <div class="main__support-contacts">
-              <h4>О нас</h4>
+          <ul class="main__tabs main__tabs-first">
+            <li class="t1"><a>Форма обратной связи</a></li>
+            <li class="t2"><a>Контактные данные</a></li>
+          </ul>
+
+  <div class="t1">
+            <div>
+                <h4>Форма обратной связи</h4>
+                <form class="main__support-form">
+                  <input class="main__name-input" type="text" placeholder="Ваше Имя">
+                  <input  class="main__email-input"type="email" placeholder="Ваш почтовый адрес" required>
+                  <textarea  class = "main__text-input" placeholder="Текст сообщения" required></textarea>
+                  <button class="main__button-send" rel= "reg_form" >Отправить</button>
+                </form>
+            </div>
+  </div>
+
+  <div class="t2">
+               <h4>О нас</h4>
               <p>Компания «AERP SyStem» начала работу в Украине с 2017 года.<br>
                 Мы помогаем нашим клиентам комплексно решать задачи разного уровня сложности,<br>
                 предлагаем IТ-сервисы для эффективного управления,<br>
@@ -166,7 +174,10 @@
               <h4>Контактные данные</h4>
               <p>телефон: +3809432ххххх</p>
               <p><a href="aerp@mail.net">aerp@mail.net</a></p>
-          </div>
+  </div>
+
+
+
         </div>
       </div>
 
@@ -174,6 +185,23 @@
 
       <div class="footer">
         <p>Copyright © 2017 AERP corporation</p>
+      </div>
+
+      <div class="popup">
+        <form class="content-close">
+          <button>Close form</button>
+        </form>
+
+        <form class="content">
+
+          <input class="content-email" type="email" placeholder = "Ваш e-mail">
+          <input class="content-name" type="text" placeholder = "Ваше имя">
+          <input class="content-number" type="text" placeholder = "Номер телефона">
+          <textarea class="content-commet"></textarea>
+          <button class="content-button">Заказать</button>
+        </form>
+        <div class=popup__wrapper>
+        </div>
       </div>
   <script src="scripts/script.js"></script>
   </body>

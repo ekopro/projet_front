@@ -95,3 +95,51 @@ $(function () {
 	   return false;
 	});
 });
+
+$(document).ready(function() {
+  const $popup  = $('.popup');
+
+  $('.price').click( function(event) {
+    event.preventDefault();
+    $popup.show();
+  });
+});
+
+
+$(document).ready(function() {
+  const $popup  = $('.popup');
+
+  $('.content-close').click( function(event) {
+    event.preventDefault();
+    $popup.hide();
+  });
+});
+
+
+$(document).ready(function() {
+  const $popup  = $('.popup');
+
+  $('.price').click( function(event) {
+    event.preventDefault();
+    $popup.show();
+  });
+});
+
+
+
+
+$(document).ready(function() {
+
+$('ul.main__tabs li').css('cursor', 'pointer');
+
+$('ul.main__tabs.main__tabs-first li').click(function(){
+  var thisClass = this.className.slice(0,2);
+  console.log(thisClass);
+  $('div.t1').hide();
+  $('div.t2').hide();
+  $('div.' + thisClass).show();
+  $('ul.main__tabs.main__tabs-first li').removeClass('tab-current');
+  $(this).addClass('tab-current');
+  });
+
+});

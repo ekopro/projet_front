@@ -46,6 +46,7 @@ button:focus {
   color: white;
   padding: 1.5em;
   border-bottom: 1px solid lightgrey;
+  opacity: 1;
 }
 
 
@@ -85,14 +86,14 @@ button:focus {
 
 .header__navigation-menu li > a:visited {
   text-decoration: none;
-  color: #4cb718;
+  color: #32cf87;
 
 }
 
 
 .header__navigation-menu li > a:hover {
   color:green;
-  border-bottom: 1px solid #4cb718;
+  border-bottom: 1px solid #32cf87;
   cursor: pointer;
   padding-bottom: 1em;
 }
@@ -112,10 +113,12 @@ button:focus {
   justify-content: center;
   -webkit-align-items: center; /* Safari */
   align-items: center;
-  color: white;
+  color: black;
   background: black;
   height: 35em;
 }
+
+
 
 
 .main__name {
@@ -124,7 +127,8 @@ button:focus {
 
 .main__description {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  color: white;
 }
 
 .main__advantages-title {
@@ -150,7 +154,7 @@ button:focus {
   justify-content: center;
   -webkit-align-items: center; /* Safari */
   align-items: center;
-  color: #4cb718;
+  color: #32cf87;
   margin-bottom: 5em;
 }
 
@@ -168,8 +172,8 @@ button:focus {
 }
 
 .main__quad--table div:hover {
-  border: 2px solid #4cb718;
-  color:#4cb718;
+  border: 2px solid #32cf87;
+  color:#32cf87;
   margin-left: 0.90em;
   margin-right: 0.90em;
   margin-bottom: 0.90em;
@@ -182,7 +186,7 @@ button:focus {
 }
 
 .main__quad--table div:hover > svg {
-  fill: #4cb718;
+  fill: #32cf87;
 }
 
 .main__quad--table div > h3 {
@@ -210,7 +214,7 @@ button:focus {
   justify-content: center;
   -webkit-align-items: center; /* Safari */
   align-items: center;
-  color: #4cb718;
+  color: #32cf87;
 }
 
 .main__pricing-list,
@@ -249,7 +253,7 @@ button:focus {
 
 
 .main__pricing-list div:hover {
-  border:2px solid #4cb718;
+  border:2px solid #32cf87;
   height: 27em;
   color: white;
   cursor: pointer;
@@ -258,7 +262,7 @@ button:focus {
   -moz-transform: scale(1.05);
   margin:0;
   background-image: linear-gradient(to bottom,
-    #4cb718 15%,
+    #32cf87 15%,
     rgba(255, 255, 255, 0) 15%,
     rgba(255, 255, 255, 0) 100%,
     rgb(4, 120, 21) 15%);
@@ -286,12 +290,12 @@ button:focus {
   color: white;
   border: none;
   margin: auto;
-  background-color: #3cb718;
+  background-color: #32cf87;
   text-shadow: -1px 1px #27496d;
 }
 
 .main__pricing-list div > button:active {
-  background-color: #3cb718;
+  background-color: #32cf87;
   text-shadow: -1px 1px #193047;
   border: none;
 }
@@ -333,6 +337,7 @@ button:focus {
   margin-top: 5em;
   align-content: space-between;
   width: 100%;
+  color: white;
 
 }
 
@@ -377,15 +382,60 @@ input:hover,  textarea:hover,
     -webkit-box-shadow: rgba(0, 0, 0,  0.15) 0px 0px 8px;
 }
 
-
+ul.main__tabs {
+	height: 25px;
+	line-height: 25px;
+	margin: 0 0 3px;
+	list-style: none;
+}
+* html ul.main__tabs {margin-bottom: 0;}
+ul.main__tabs li {
+	float: left;
+	margin-right: 1px;
+}
+ul.main__tabs li a {
+	display: block;
+	padding: 0 13px 1px;
+	margin-bottom: -1px;
+	color: #444;
+	text-decoration: none;
+	cursor: pointer;
+	background: #F9F9F9;
+	border: 1px solid #EFEFEF;
+	border-bottom: 1px solid #F9F9F9;
+	position: relative;
+}
+* html ul.main__tabs li a {float: left}
+*+html ul.main__tabs li a {float: left}
+ul.main__tabs li a:hover {
+	color: #F70;
+	padding: 0 13px;
+	background: #FFFFDF;
+	border: 1px solid #FFCA95;
+}
+ul.main__tabs li.tab-current a {
+	color: #444;
+	background: #EFEFEF;
+	padding: 0px 13px 2px;
+	border: 1px solid #DDD;
+	border-bottom: 1px solid #EFEFEF;
+}
+div.t2,
+ {
+	display: none;
+}
+div.t1,
+div.t2 {
+	padding: 0 12px;
+}
 
 .main__support-form {
   display: -webkit-flex; /* Safari */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   -webkit-flex-wrap: wrap; /* Safari */
   flex-wrap: wrap;
-  width: 25em;
+  width: 100%;
   font-size: 1em;
 }
 
@@ -449,6 +499,77 @@ input:hover,  textarea:hover,
     opacity:.8;
     }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.popup__wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: #000;
+  opacity: 0.8;
+
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 40em;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  background: #fff;
+  border-radius: 20px;
+  min-height: 30em;
+  margin:auto;
+  text-align: center;
+  opacity: 1;
+}
+
+.content-close {
+  position: absolute;
+  z-index: 9999;
+}
+
+.content-email,
+.content-name,
+.content-number
+ {
+  width: 400px;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+}
+
+.content-commet {
+  width: 400px;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+  height: 200px;
+}
+
+.content-button {
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+}
 
 .footer {
   flex: 0 0 auto;
@@ -464,4 +585,32 @@ input:hover,  textarea:hover,
   background: black;
   color: lightgrey;
   font-size: 1em;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('../image/644eca242a52.jpg');
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+
+.parallax2 {
+    /* The image used */
+    background-image: url('../image/background.jpg');
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
