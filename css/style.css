@@ -317,7 +317,7 @@ button:focus {
 .main__email-input,
 .main__text-input
  {
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 8px 8px 8px;
     box-sizing: border-box;
@@ -581,11 +581,11 @@ span {
   top: 0;
   left: 0;
   right: 0;
-  max-width: 40em;
+  max-width: 30em;
   width: 100%;
   height: auto;
   z-index: 3;
-  background: #fff;
+  background: grey;
   border-radius: 20px;
   min-height: 30em;
   margin:auto;
@@ -596,24 +596,40 @@ span {
 .content-close {
   position: absolute;
   z-index: 9999;
+  right:30%;
 }
 
 .content-email,
 .content-name,
 .content-number
  {
-  width: 400px;
-  border-radius: 1em;
-  padding: 1em;
-  margin: 1em;
+   max-width: 400px;
+   padding: 12px 20px;
+   margin: 8px 8px 8px 8px;
+   box-sizing: border-box;
+   border: 3px solid #ccc;
+   -webkit-transition: 0.5s;
+   transition: 0.5s;
+   outline: none;
+   background: grey;
+   cursor: pointer;
+   color: white;
+   font: Helvetica, Geneva, Arial, sans-serif;
 }
 
 .content-commet {
-  width: 400px;
-  border-radius: 1em;
-  padding: 1em;
-  margin: 1em;
-  height: 200px;
+  max-width: 400px;
+  padding: 12px 20px;
+  margin: 8px 8px 8px 8px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  background: grey;
+  cursor: pointer;
+  color: white;
+  font: Helvetica, Geneva, Arial, sans-serif;
 }
 
 .content-button {
