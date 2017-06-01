@@ -610,7 +610,7 @@ span {
   z-index: 9999;
   width: 32px;
   height: 32px;
-  top:-20px;
+  top:0;
   right:0;
   left:90%;
 }
@@ -623,9 +623,9 @@ span {
 .content-name,
 .content-number
  {
+   width: 90%;
    max-width: 400px;
    padding: 12px 20px;
-   margin: 8px 8px 8px 8px;
    box-sizing: border-box;
    border: 3px solid #ccc;
    -webkit-transition: 0.5s;
@@ -635,12 +635,15 @@ span {
    cursor: pointer;
    color: white;
    font: Helvetica, Geneva, Arial, sans-serif;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5px;
+   max-width: 500px;
 }
 
 .content-commet {
-  max-width: 400px;
+  width: 90%;
   padding: 12px 20px;
-  margin: 8px 8px 8px 8px;
   box-sizing: border-box;
   border: 3px solid #ccc;
   -webkit-transition: 0.5s;
@@ -650,6 +653,12 @@ span {
   cursor: pointer;
   color: white;
   font-family: Helvetica, Geneva, Arial, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 100px;
+  max-width: 500px;
 }
 
 .content-button {
@@ -664,7 +673,7 @@ span {
 
 .information {
   position: relative;
-  top: -30px;
+  top: -10px;
 }
 
 .footer {

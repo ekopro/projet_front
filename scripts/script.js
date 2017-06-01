@@ -120,6 +120,7 @@ $(document).ready(function() {
     event.preventDefault();
     $popup.hide();
     $(".information p").html('Ваше сообщение');
+    $(".information p").css("background-color", "grey");
   });
 });
 
@@ -136,7 +137,11 @@ $(document).ready(function() {
     event.preventDefault();
     console.log(toPrice[buyPrice]);
     ($(".title-price").html(`${toPrice[buyPrice]}`));
-    $popup.show();
+    // transform: scale(1.05);
+    // -webkit-transform: scale(1.05);
+    // -moz-transform: scale(1.05);s
+    
+    $popup.show("slow");
   });
 });
 
@@ -150,21 +155,11 @@ $('ul.main__tabs.main__tabs-first li').click(function(){
   console.log(thisClass);
   $('div.t1').hide();
   $('div.t2').hide();
-  $('div.' + thisClass).show();
+  $('div.' + thisClass).show(1);
   $('ul.main__tabs.main__tabs-first li').removeClass('tab-current');
   $(this).addClass('tab-current');
   });
 });
-
-
-// $(document).ready(function() {
-//   const $popup  = $('.popup');
-//
-//   $('.content-button').click( function(event) {
-//     event.preventDefault();
-//     $(".information p").html("<p>Ваше сообщение принято, Ожидайте звонок</p>");
-//   });
-// });
 
 
 (function( $ ){
@@ -228,6 +223,8 @@ $(function() {
         return false
       } else {
         $(".information p").html("<p>Ваше сообщение принято, Ожидайте звонок</p>");
+
+        $(".information p").css("background-color", "yellow");
         // Все хорошо, все заполнено, отправляем форму
 
         // form.submit();
