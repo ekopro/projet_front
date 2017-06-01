@@ -197,7 +197,7 @@ button:focus {
 
 .main__quad--table div > p {
   flex-grow: 1;
-  margin: 0;
+  margin: 5px;
   text-align:  center;
 }
 
@@ -236,6 +236,8 @@ button:focus {
   height: 100%;
 }
 
+
+
 .main__pricing-list div {
   -border: 2px solid #8f8e91;
   margin: 1.5em;
@@ -246,7 +248,8 @@ button:focus {
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
+  justify-content: space-between;
   border-bottom: 2px solid #8f8e91;
   border: 2px solid #8f8e91;
 }
@@ -281,7 +284,8 @@ button:focus {
   color: black;
   background-color: white;
   border:1px solid black;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   font-family: Helvetica, Geneva, Arial, sans-serif;
 }
 
@@ -289,7 +293,8 @@ button:focus {
 .main__pricing-list div > button:hover {
   color: white;
   border: none;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #32cf87;
   text-shadow: -1px 1px #27496d;
 }
@@ -328,12 +333,13 @@ button:focus {
     background: grey;
     cursor: pointer;
     color: white;
-    font: Helvetica, Geneva, Arial, sans-serif;
+    font-family: Helvetica, Geneva, Arial, sans-serif;
 }
 
 .main__text-input {
   height: 300px;
   width: 1200px;
+
 }
 
 .main__name-input,
@@ -573,6 +579,12 @@ span {
 
 }
 
+.title-price {
+    position: relative;
+    margin: 0;
+    top: 10px;
+}
+
 .content {
   display: flex;
   justify-content: center;
@@ -594,9 +606,17 @@ span {
 }
 
 .content-close {
-  position: absolute;
+  position: relative;
   z-index: 9999;
-  right:30%;
+  width: 32px;
+  height: 32px;
+  top:-20px;
+  right:0;
+  left:90%;
+}
+
+.content-close:hover {
+  fill: white;
 }
 
 .content-email,
@@ -629,13 +649,22 @@ span {
   background: grey;
   cursor: pointer;
   color: white;
-  font: Helvetica, Geneva, Arial, sans-serif;
+  font-family: Helvetica, Geneva, Arial, sans-serif;
 }
 
 .content-button {
-  border-radius: 1em;
-  padding: 1em;
-  margin: 1em;
+  color: #fff;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.information {
+  position: relative;
+  top: -30px;
 }
 
 .footer {
@@ -656,10 +685,10 @@ span {
 
 .parallax {
     /* The image used */
-    background-image: url('../image/funkcii_erp.jpg');
+    background-image: url('../image/644eca242a52.jpg');
     /* Set a specific height */
     min-height: 500px;
-    
+
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;

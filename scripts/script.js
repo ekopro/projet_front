@@ -1,3 +1,10 @@
+let toPrice =  {
+  mini : 'Заказ для малого бизнеса до 15 компьютеров',
+  middle : 'Заказ для малого бизнеса до 100 компьютеров',
+  elite : 'Заказ для малого бизнеса более 100 компьютеров'
+};
+
+
 
 
 function onSend (elForm, event) {
@@ -112,6 +119,7 @@ $(document).ready(function() {
   $('.content-close').click( function(event) {
     event.preventDefault();
     $popup.hide();
+    $(".information p").html('Ваше сообщение');
   });
 });
 
@@ -120,12 +128,17 @@ $(document).ready(function() {
   const $popup  = $('.popup');
 
   $('.price').click( function(event) {
+    let string = $('.price:hover').parent()[0].outerHTML;
+    let firstIndex = string.indexOf('<h3>');
+    let lastIndex = string.indexOf('</h3>');
+    let buyPrice = string.substring(firstIndex+4,lastIndex).toLowerCase();
+
     event.preventDefault();
+    console.log(toPrice[buyPrice]);
+    ($(".title-price").html(`${toPrice[buyPrice]}`));
     $popup.show();
   });
 });
-
-
 
 
 $(document).ready(function() {
@@ -141,5 +154,86 @@ $('ul.main__tabs.main__tabs-first li').click(function(){
   $('ul.main__tabs.main__tabs-first li').removeClass('tab-current');
   $(this).addClass('tab-current');
   });
-
 });
+
+
+// $(document).ready(function() {
+//   const $popup  = $('.popup');
+//
+//   $('.content-button').click( function(event) {
+//     event.preventDefault();
+//     $(".information p").html("<p>Ваше сообщение принято, Ожидайте звонок</p>");
+//   });
+// });
+
+
+(function( $ ){
+
+$(function() {
+
+  $('.content').each(function(){
+    // Объявляем переменные (форма и кнопка отправки)
+	var form = $(this),
+        btn = form.find('.content-button');
+
+    // Добавляем каждому проверяемому полю, указание что поле пустое
+	form.find('.rfield').addClass('empty_field');
+
+    // Функция проверки полей формы
+    function checkInput(){
+      form.find('.rfield').each(function(){
+        if($(this).val() != ''){
+          // Если поле не пустое удаляем класс-указание
+		$(this).removeClass('empty_field');
+        } else {
+          // Если поле пустое добавляем класс-указание
+		$(this).addClass('empty_field');
+        }
+      });
+    }
+
+    // Функция подсветки незаполненных полей
+    function lightEmpty(){
+      form.find('.empty_field').css({'border-color':'#d8512d'});
+      // Через полсекунды удаляем подсветку
+      setTimeout(function(){
+        form.find('.empty_field').removeAttr('style');
+      },500);
+    }
+
+    // Проверка в режиме реального времени
+    setInterval(function(){
+      // Запускаем функцию проверки полей на заполненность
+	  checkInput();
+      // Считаем к-во незаполненных полей
+      var sizeEmpty = form.find('.empty_field').size();
+      // Вешаем условие-тригер на кнопку отправки формы
+      if(sizeEmpty > 0){
+        if(btn.hasClass('disabled')){
+          return false
+        } else {
+          btn.addClass('disabled')
+        }
+      } else {
+        btn.removeClass('disabled')
+      }
+    },500);
+
+    // Событие клика по кнопке отправить
+    btn.click(function(event){
+      event.preventDefault();
+      if($(this).hasClass('disabled')){
+        // подсвечиваем незаполненные поля и форму не отправляем, если есть незаполненные поля
+		lightEmpty();
+        return false
+      } else {
+        $(".information p").html("<p>Ваше сообщение принято, Ожидайте звонок</p>");
+        // Все хорошо, все заполнено, отправляем форму
+
+        // form.submit();
+      }
+    });
+  });
+});
+
+})( jQuery );
