@@ -1,7 +1,7 @@
 let toPrice =  {
   mini : 'Заказ для малого бизнеса до 15 компьютеров',
-  middle : 'Заказ для малого бизнеса до 100 компьютеров',
-  elite : 'Заказ для малого бизнеса более 100 компьютеров'
+  middle : 'Заказ для среднегго бизнеса до 100 компьютеров',
+  elite : 'Заказ для крупного бизнеса более 100 компьютеров'
 };
 
 
@@ -119,8 +119,8 @@ $(document).ready(function() {
   $('.content-close').click( function(event) {
     event.preventDefault();
     $popup.hide();
-    $(".information p").html('Ваше сообщение');
-    $(".information p").css("background-color", "grey");
+    $(".information p").html('Заполните поля для оформления заявки');
+    $(".information p").css("background-color", "lightgrey");
   });
 });
 
@@ -137,11 +137,8 @@ $(document).ready(function() {
     event.preventDefault();
     console.log(toPrice[buyPrice]);
     ($(".title-price").html(`${toPrice[buyPrice]}`));
-    // transform: scale(1.05);
-    // -webkit-transform: scale(1.05);
-    // -moz-transform: scale(1.05);s
-    
-    $popup.show("slow");
+
+    $popup.show(600);
   });
 });
 
@@ -151,58 +148,58 @@ $(document).ready(function() {
 $('ul.main__tabs li').css('cursor', 'pointer');
 
 $('ul.main__tabs.main__tabs-first li').click(function(){
-  var thisClass = this.className.slice(0,2);
+  let thisClass = this.className.slice(0,2);
   console.log(thisClass);
   $('div.t1').hide();
   $('div.t2').hide();
-  $('div.' + thisClass).show(1);
+  $('div.' + thisClass).show();
   $('ul.main__tabs.main__tabs-first li').removeClass('tab-current');
   $(this).addClass('tab-current');
   });
 });
 
 
-(function( $ ){
+
 
 $(function() {
 
   $('.content').each(function(){
-    // Объявляем переменные (форма и кнопка отправки)
-	var form = $(this),
+
+	let form = $(this),
         btn = form.find('.content-button');
 
-    // Добавляем каждому проверяемому полю, указание что поле пустое
+
 	form.find('.rfield').addClass('empty_field');
 
-    // Функция проверки полей формы
+
     function checkInput(){
       form.find('.rfield').each(function(){
         if($(this).val() != ''){
-          // Если поле не пустое удаляем класс-указание
+
 		$(this).removeClass('empty_field');
         } else {
-          // Если поле пустое добавляем класс-указание
+
 		$(this).addClass('empty_field');
         }
       });
     }
 
-    // Функция подсветки незаполненных полей
+
     function lightEmpty(){
       form.find('.empty_field').css({'border-color':'#d8512d'});
-      // Через полсекунды удаляем подсветку
+
       setTimeout(function(){
         form.find('.empty_field').removeAttr('style');
       },500);
     }
 
-    // Проверка в режиме реального времени
+
     setInterval(function(){
-      // Запускаем функцию проверки полей на заполненность
+
 	  checkInput();
-      // Считаем к-во незаполненных полей
-      var sizeEmpty = form.find('.empty_field').size();
-      // Вешаем условие-тригер на кнопку отправки формы
+
+      let sizeEmpty = form.find('.empty_field').length;
+
       if(sizeEmpty > 0){
         if(btn.hasClass('disabled')){
           return false
@@ -214,23 +211,84 @@ $(function() {
       }
     },500);
 
-    // Событие клика по кнопке отправить
     btn.click(function(event){
       event.preventDefault();
       if($(this).hasClass('disabled')){
-        // подсвечиваем незаполненные поля и форму не отправляем, если есть незаполненные поля
 		lightEmpty();
         return false
       } else {
         $(".information p").html("<p>Ваше сообщение принято, Ожидайте звонок</p>");
 
         $(".information p").css("background-color", "yellow");
-        // Все хорошо, все заполнено, отправляем форму
-
-        // form.submit();
+        $('.content')[0].reset();
       }
     });
   });
 });
 
-})( jQuery );
+
+
+$(function() {
+
+  $('.main__support-form').each(function(){
+
+	let form = $(this),
+        btn = form.find('.main__button-send');
+
+
+	form.find('.rfield').addClass('empty_field');
+
+
+    function checkInput(){
+      form.find('.rfield').each(function(){
+        if($(this).val() != ''){
+
+		$(this).removeClass('empty_field');
+        } else {
+
+		$(this).addClass('empty_field');
+        }
+      });
+    }
+
+
+    function lightEmpty(){
+      form.find('.empty_field').css({'border-color':'#d8512d'});
+
+      setTimeout(function(){
+        form.find('.empty_field').removeAttr('style');
+      },500);
+    }
+
+
+    setInterval(function(){
+
+	  checkInput();
+
+      let sizeEmpty = form.find('.empty_field').length;
+
+      if(sizeEmpty > 0){
+        if(btn.hasClass('disabled')){
+          return false
+        } else {
+          btn.addClass('disabled')
+        }
+      } else {
+        btn.removeClass('disabled')
+      }
+    },500);
+
+    btn.click(function(event){
+      event.preventDefault();
+      if($(this).hasClass('disabled')){
+		      lightEmpty();
+        return false
+      } else {
+        $(".main__message").html("<p>Ваше сообщение отправлено</p>");
+        $(".main__message").css("color", "black");
+        $('.main__support-form')[0].reset();
+        setTimeout(function(){$(".main__message").html(" ")},10000);
+        }
+    });
+  });
+});

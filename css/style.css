@@ -505,6 +505,10 @@ span {
   margin: auto;
 }
 
+.main__button-send:hover {
+  background-color: #417cb8;
+  border: 1px solid white;
+}
 
 .main__top-button {
   width:5em;
@@ -590,9 +594,10 @@ span {
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 0;
   right: 0;
+  bottom:10%;
   max-width: 30em;
   width: 100%;
   height: auto;
@@ -669,6 +674,10 @@ span {
   display:block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.content-button:hover {
+  background-color: #417cb8;
 }
 
 .information {

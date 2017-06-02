@@ -2,7 +2,15 @@
 <html lang="zxx">
   <head>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous">
+    </script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AERP</title>
@@ -155,10 +163,11 @@
   <div class="t1">
             <div class="main__support-center">
                 <h4>Форма обратной связи</h4>
+                <div class="main__message"></div>
                 <form class="main__support-form">
-                  <input class="main__name-input" type="text" placeholder="Ваше Имя">
-                  <input  class="main__email-input"type="email" placeholder="Ваш почтовый адрес" required>
-                  <textarea  class = "main__text-input" placeholder="Текст сообщения" required></textarea>
+                  <input class="main__name-input rfield" type="text" placeholder="Ваше Имя">
+                  <input  class="main__email-input rfield"type="email" placeholder="Ваш почтовый адрес" required>
+                  <textarea  class = "main__text-input rfield" placeholder="Текст сообщения" required></textarea>
                   <button class="main__button-send" rel= "reg_form" >Отправить</button>
                 </form>
             </div>
@@ -229,14 +238,14 @@
       <div class="popup">
         <form class="content">
           <div class="content-close">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 32 32">
             <title>cancel</title>
             <path d="M30.721 6.774l-9.197 9.253 9.197 9.198c0.385 0.384 0.385 1.007 0 1.392l-4.176 4.175c-0.383 0.385-1.006 0.385-1.391 0l-9.182-9.182-9.127 9.182c-0.384 0.385-1.007 0.385-1.392 0l-4.175-4.175c-0.384-0.385-0.384-1.008 0-1.392l9.127-9.182-9.126-9.126c-0.384-0.384-0.384-1.007 0-1.392l4.175-4.175c0.384-0.385 1.007-0.385 1.392 0l9.11 9.11 9.199-9.253c0.385-0.385 1.008-0.385 1.391 0l4.176 4.175c0.383 0.385 0.383 1.008-0.001 1.392z"></path>
             </svg>
           </div>
           <div class="information">
             <h3 class = "title-price"></h3>
-            <p>Сообщение</p>
+            <p>Заполните поля для оформления заявки</p>
           </div>
           <input class="content-email rfield" type="email" placeholder = "Ваш e-mail" required>
           <input class="content-name rfield" type="text" placeholder = "Ваше имя" required>
