@@ -594,10 +594,10 @@ span {
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  top: 10%;
+  top: 50%;
   left: 0;
   right: 0;
-  bottom:10%;
+  bottom: 50%;
   max-width: 30em;
   width: 100%;
   height: auto;
