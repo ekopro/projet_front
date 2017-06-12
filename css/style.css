@@ -310,7 +310,6 @@ button:focus {
 }
 
 .main__support-title {
-  display:flex;
   margin: auto;
   margin-top: 2em;
 }
