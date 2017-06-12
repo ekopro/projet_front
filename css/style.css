@@ -11,8 +11,11 @@ body {
   flex-wrap: wrap;
   font-size:15px;
   font-family: Helvetica, Geneva, Arial, sans-serif;
-  -height: 100%;
 }
+
+
+
+
 
 button {
   display: inline-block;
@@ -166,9 +169,15 @@ button:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  -align-items: center;
 
 }
+
+  .main__quad--table div>svg {
+    margin:auto;
+  }
+
+
 
 .main__quad--table div:hover {
   border: 2px solid #32cf87;
@@ -708,4 +717,18 @@ span {
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.9;
+    position: relative;
+}
+
+parallax::before {
+    background: url("../images/bg.jpg") no-repeat center center;
+    background-size: cover;
+    content: ' ';
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    will-change: transform;
+    z-index: -1;
 }

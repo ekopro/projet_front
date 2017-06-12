@@ -26,6 +26,7 @@ const eForm = document.querySelector('.main__support-form');
 eForm.addEventListener('submit', onSend.bind(null, eForm));
 
 
+//animate іmooth scrolling
 $(document).ready(function(){
 	$("#header__menu").on("click","a", function (event) {
 		event.preventDefault();
@@ -34,61 +35,56 @@ $(document).ready(function(){
 
 		let top = $(id).offset().top;
 
-		$('body,html').animate({scrollTop: top}, 1500);
+		$('body,html').animate({scrollTop: top}, 400);
 	});
 });
 
+//btton up and down
+var BottomPosition = 0;
+var BottomFlag = false;
+var AnimateFlag = false;
 
-
-
-
-
-    var BottomPosition = 0;
-    var BottomFlag = false;
-    var AnimateFlag = false;
-
-        $(document).ready(function() {
-            $('.main__top-button').click(function() {
-                AnimateFlag = true;
-                if(BottomFlag) {
-                    $("body,html").animate({"scrollTop":BottomPosition}, 400, function() {
-                        AnimateFlag = false;
-                    });
-                BottomFlag = false;
-                $('.main__top-button span').html('Вверх');
-                }
-                else { // если нажата кнопка GO TO TOP...
-                    $("body,html").animate({"scrollTop":0}, 400, function() {
-                        AnimateFlag = false;
-                    });
-                    BottomPosition = $(window).scrollTop();
-                    BottomFlag = true;
-                    $('.main__top-button span').html('Вниз');
-                }
+$(document).ready(function() {
+    $('.main__top-button').click(function() {
+        AnimateFlag = true;
+        if(BottomFlag) {
+            $("body,html").animate({"scrollTop":BottomPosition}, 400, function() {
+                AnimateFlag = false;
             });
-
-
-
-            $(window).scroll(function(event) {
-                var countScroll = $(window).scrollTop();
-                if (countScroll > 400 && !AnimateFlag) {
-                    $('.main__top-button').show();
-                    if(BottomFlag) {
-                        BottomFlag = false;
-                        $('.main__top-button span').html('Вверх');
-                    }
-                }
-                else {
-                    if(!BottomFlag) {
-                        $('.main__top-button').hide();
-                    }
-                }
+        BottomFlag = false;
+        $('.main__top-button span').html('Вверх');
+        }
+        else { // если нажата кнопка GO TO TOP...
+            $("body,html").animate({"scrollTop":0}, 400, function() {
+                AnimateFlag = false;
             });
-        });
+            BottomPosition = $(window).scrollTop();
+            BottomFlag = true;
+            $('.main__top-button span').html('Вниз');
+        }
+    });
 
 
+
+$(window).scroll(function(event) {
+    var countScroll = $(window).scrollTop();
+    if (countScroll > 400 && !AnimateFlag) {
+        $('.main__top-button').show();
+        if(BottomFlag) {
+            BottomFlag = false;
+            $('.main__top-button span').html('Вверх');
+        }
+    }
+    else {
+        if(!BottomFlag) {
+            $('.main__top-button').hide();
+        }
+    }
+});
+});
+
+//script for popups
 $(function () {
-	//script for popups
   $('button.show_popup').click(function () {
      console.log($(this).attr("id"));
 	   $('div.'+$(this).attr("id")).fadeIn(500);
@@ -136,7 +132,8 @@ $(document).ready(function() {
 
     event.preventDefault();
     console.log(toPrice[buyPrice]);
-    ($(".title-price").html(`${toPrice[buyPrice]}`));
+    let titleMessage = toPrice[buyPrice];
+    ($(".title-price").html(titleMessage));
 
     $popup.show(600);
   });
@@ -227,7 +224,7 @@ $(function() {
 });
 
 
-
+//clear field and form script field .
 $(function() {
 
   $('.main__support-form').each(function(){
