@@ -33,7 +33,6 @@ button:focus {
 
 .header {
   flex: 0 0 auto;
-  height: 100%;
   margin:0;
   display: -webkit-flex; /* Safari */
   display: flex;
@@ -208,11 +207,7 @@ button:focus {
   display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: column;
-  -webkit-flex-wrap: nowrap; /* Safari */
-  flex-wrap: wrap;
-  -webkit-justify-content: center; /* Safari */
   justify-content: center;
-  -webkit-align-items: center; /* Safari */
   align-items: center;
   color: #32cf87;
 }
